@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * Common服务
+ *
  * @author haohaozhi
  * @date 2020-05-06 18:18:52
  */

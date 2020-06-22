@@ -1,5 +1,5 @@
 server:
-  port: 9100
+  port: 9301
   servlet:
     context-path: /
   ssl:
@@ -7,12 +7,12 @@ server:
 
 spring:
   application:
-    name: dream-home-common
+    name: dream-home-dubbo-consumer
   profiles:
     active: dev
   devtools:
     livereload:
-      port: 39100
+      port: 39301
 
   redis:
     timeout: 6000ms
@@ -39,7 +39,7 @@ management:
       exposure:
         include: "*"
   server:
-    port: 9100
+    port: 9301
     servlet:
       context-path: /
     ssl:
@@ -47,5 +47,4 @@ management:
   endpoint:
     health:
       show-details: always
-
 

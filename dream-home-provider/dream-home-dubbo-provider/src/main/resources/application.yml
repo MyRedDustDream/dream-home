@@ -1,0 +1,31 @@
+server:
+  port: 9201
+  servlet:
+    context-path: /
+  ssl:
+    enabled: false
+
+spring:
+  application:
+    name: dream-home-dubbo-provider
+  profiles:
+    active: dev
+  devtools:
+    livereload:
+      port: 39201
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 9201
+    servlet:
+      context-path: /
+    ssl:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+

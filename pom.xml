@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!--    <parent>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>2.2.6.RELEASE</version>
-            <relativePath/>
-        </parent>-->
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.dream</groupId>
     <artifactId>dream-home</artifactId>
-    <version>1.0.0</version>
+    <version>${revision}</version>
 
     <name>dream-home</name>
     <description>dream home project</description>
@@ -19,9 +12,12 @@
 
     <modules>
         <module>dream-home-common</module>
+        <module>dream-home-provider</module>
+        <module>dream-home-consumer</module>
     </modules>
 
     <properties>
+        <revision>1.0.1</revision>
         <java.version>1.8</java.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
@@ -34,7 +30,13 @@
         <com.google.guava.verson>28.1-jre</com.google.guava.verson>
         <org.apache.poi.version>4.1.0</org.apache.poi.version>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
-        <httpclient_version>4.5.3</httpclient_version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <commons-pool2.version>2.8.0</commons-pool2.version>
+        <jedis.version>2.9.1</jedis.version>
+        <dubbo-registry-nacos.version>0.0.1</dubbo-registry-nacos.version>
+        <nacos-client.version>1.2.1</nacos-client.version>
+        <dubbo.version>2.6.5</dubbo.version>
+        <com.alibaba.spring.spring-context-support.version>1.0.2</com.alibaba.spring.spring-context-support.version>
     </properties>
 
     <dependencies>
