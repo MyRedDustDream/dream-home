@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <localRepository>/Users/study/code/maven/repository</localRepository>
+
+    <pluginGroups>
+    </pluginGroups>
+
+    <proxies>
+    </proxies>
+
+    <servers>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <!-- <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+            <url>https://maven.aliyun.com/repository/central/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
+
+
+    <profiles>
+        <profile>
+            <id>nexus</id>
+            <repositories>
+
+                <repository>
+                    <id>xr-snapshots</id>
+                    <url>http://nexus.alibaba.com/repository/snapshots/</url>
+                    <!--     <url>https://maven.aliyun.com/repository/central/</url> -->
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>xr-plugins</id>
+                    <name>xingren plugins</name>
+                    <url>http://nexus.alibaba.com/repository/public/</url>
+                    <!--    <url>https://maven.aliyun.com/repository/central/</url> -->
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+</settings>

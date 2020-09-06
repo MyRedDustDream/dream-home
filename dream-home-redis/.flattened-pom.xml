@@ -8,11 +8,17 @@
     <version>1.0.1</version>
   </parent>
   <groupId>com.dream</groupId>
-  <artifactId>dream-home-common</artifactId>
+  <artifactId>dream-home-redis</artifactId>
   <version>1.0.1</version>
-  <name>dream-home-common</name>
-  <description>dream-home-common description</description>
+  <name>dream-home-redis</name>
+  <description>dream-home-redis description</description>
   <dependencies>
+    <dependency>
+      <groupId>com.dream</groupId>
+      <artifactId>dream-home-common</artifactId>
+      <version>${revision}</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-dependencies</artifactId>
@@ -33,6 +39,21 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.redisson</groupId>
+      <artifactId>redisson</artifactId>
+      <version>${redisson.version}</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.redisson</groupId>
+      <artifactId>redisson-spring-boot-starter</artifactId>
+      <version>${redisson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -60,10 +81,34 @@
       <version>${commons-pool2.version}</version>
     </dependency>
     <dependency>
-      <groupId>net.sf.json-lib</groupId>
-      <artifactId>json-lib</artifactId>
-      <version>2.3</version>
-      <classifier>jdk15</classifier>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>${jedis.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo-registry-nacos</artifactId>
+      <version>${dubbo-registry-nacos.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba.nacos</groupId>
+      <artifactId>nacos-client</artifactId>
+      <version>${nacos-client.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>${dubbo.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba.spring</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${com.alibaba.spring.spring-context-support.version}</version>
     </dependency>
   </dependencies>
   <build>
