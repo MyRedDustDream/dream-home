@@ -1,4 +1,4 @@
-package com.dream.home.redis.redis.config;
+package com.dream.home.redis.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

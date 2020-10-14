@@ -3,7 +3,6 @@ package com.dream.home.common.util;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
@@ -377,18 +376,6 @@ public class DateUtil {
     }
 
     public static void main(String[] args) {
-        Date d1 = parseDate("2019-02-27");
-        Date d2 = parseDate("2019-01-29");
-        System.out.println("日期：" + formatDate(d2));
-
-        Date date = addMonths(d2, 1);
-        System.out.println("加一个月：" + formatDate(date));
-
-        String str = "18:00";
-        LocalTime time = LocalTime.now();
-        time = LocalTime.parse(str);
-        System.out.println(1);
-        //System.out.println(getDifferenceDayCount("2019-09-09","2019-09-10"));//不包含起始日期的天数获取
 
     }
 }

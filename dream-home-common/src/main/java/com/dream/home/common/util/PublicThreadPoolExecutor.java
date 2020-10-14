@@ -1,7 +1,10 @@
 package com.dream.home.common.util;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.*;
 
 /**
@@ -10,12 +13,21 @@ import java.util.concurrent.*;
  * @author hhz
  * @date 2020-05-14 15:22:00
  */
+@ThreadSafe
 public class PublicThreadPoolExecutor {
+
+    private static final Logger logger = LoggerFactory.getLogger(PublicThreadPoolExecutor.class);
+    private static final int PROCESSOR = Runtime.getRuntime().availableProcessors();
 
     /**
      * 线程池
      */
-    private static ThreadPoolExecutor executorService = null;
+    private static final ExecutorService executorService = new ThreadPoolExecutor(PROCESSOR, PROCESSOR, 3, TimeUnit.SECONDS, new LinkedBlockingDeque<>(),
+            new ThreadFactoryBuilder().setNameFormat("PublicThreadPoolExecutor-task-%d").build(), new ThreadPoolExecutor.CallerRunsPolicy());
+
+    static {
+        logger.info("static CPU核心数 processor size:{}", PROCESSOR);
+    }
 
     private PublicThreadPoolExecutor() {
     }
@@ -25,15 +37,7 @@ public class PublicThreadPoolExecutor {
      *
      * @return pool线程池
      */
-    public static ThreadPoolExecutor getPool() {
-        if (executorService == null) {
-            synchronized (PublicThreadPoolExecutor.class) {
-                executorService = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors(), Runtime.getRuntime().availableProcessors(), 1000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(),
-                        new ThreadFactoryBuilder().setNameFormat("PublicThreadPoolExecutor-task-%d").build(), new ThreadPoolExecutor.CallerRunsPolicy());
-                // 核心线程超时回收，设置allowCoreThreadTimeout=true（默认false）时，核心线程会超时关闭
-                executorService.allowCoreThreadTimeOut(true);
-            }
-        }
+    public static ExecutorService getPool() {
         return executorService;
     }
 
@@ -51,9 +55,8 @@ public class PublicThreadPoolExecutor {
      *
      * @param runnable runnable
      */
-    @SuppressWarnings("rawtypes")
-    public static Future submitRunnable(Runnable runnable) {
-        return getPool().submit(runnable);
+    public static void submitRunnable(Runnable runnable) {
+        getPool().submit(runnable);
     }
 
     /**
@@ -64,6 +67,10 @@ public class PublicThreadPoolExecutor {
      */
     public static <T> Future<T> submitCallable(Callable<T> callable) {
         return getPool().submit(callable);
+    }
+
+    public static void main(String[] args) {
+        logger.info("main CPU核心数 processor size:{}", PROCESSOR);
     }
 
 }

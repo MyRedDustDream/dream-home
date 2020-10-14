@@ -1,4 +1,4 @@
-package com.dream.home.redis.redis.config;
+package com.dream.home.redis.config;
 
 import org.redisson.Redisson;
 import org.redisson.config.ClusterServersConfig;

@@ -11,8 +11,10 @@
   <modules>
     <module>dream-home-common</module>
     <module>dream-home-redis</module>
+    <module>dream-home-nacos</module>
   </modules>
   <properties>
+    <nacos-config.version>2.2.0.RELEASE</nacos-config.version>
     <org.apache.poi.version>4.1.0</org.apache.poi.version>
     <lombok.version>1.18.6</lombok.version>
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
@@ -34,6 +36,7 @@
     <com.google.guava.verson>28.1-jre</com.google.guava.verson>
     <dubbo-registry-nacos.version>0.0.1</dubbo-registry-nacos.version>
     <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+    <nacos-discovery.version>2.2.1.RELEASE</nacos-discovery.version>
   </properties>
   <dependencyManagement>
     <dependencies>

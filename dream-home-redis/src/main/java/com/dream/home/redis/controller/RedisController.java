@@ -25,7 +25,7 @@ public class RedisController {
     private RedissonUtil redissonUtil;
 
     @ApiOperation("getLock")
-    @GetMapping(value = "/getLock", name = "首页")
+    @GetMapping(value = "/getLock", name = "获取锁")
     public Boolean getLock(@RequestParam("key") String key) {
         return redissonUtil.getLock(key);
     }

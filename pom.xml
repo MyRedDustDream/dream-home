@@ -13,6 +13,7 @@
     <modules>
         <module>dream-home-common</module>
         <module>dream-home-redis</module>
+        <module>dream-home-nacos</module>
     </modules>
 
     <properties>
@@ -35,6 +36,8 @@
         <jedis.version>2.9.1</jedis.version>
         <dubbo-registry-nacos.version>0.0.1</dubbo-registry-nacos.version>
         <nacos-client.version>1.2.1</nacos-client.version>
+        <nacos-config.version>2.2.0.RELEASE</nacos-config.version>
+        <nacos-discovery.version>2.2.1.RELEASE</nacos-discovery.version>
         <dubbo.version>2.6.5</dubbo.version>
         <com.alibaba.spring.spring-context-support.version>1.0.2</com.alibaba.spring.spring-context-support.version>
         <flatten.version>1.1.0</flatten.version>

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RedisWelcomeController {
 
-    @ApiOperation("首页")
-    @GetMapping(value = "/", name = "首页")
+    @ApiOperation("Redis首页")
+    @GetMapping(value = "/", name = "Redis首页")
     public String homePage() {
         return CommonConstant.FORWARD_KEY + CommonConstant.COLON_SEPARATOR + CommonConstant.HOME_PAGE;
     }

@@ -1,19 +1,23 @@
-package com.dream.home.common.controller;
+package com.dream.home.redis.controller;
 
 import com.dream.home.common.constant.CommonConstant;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * Common欢迎控制器
+ * Nacos欢迎控制器
  *
  * @author hhz
- * @date 2020-05-14 09:45:23
+ * @date 2020-09-28 16:10:42
  */
+@Api("Nacos欢迎控制器")
 @Controller
-public class CommonWelcomeController {
+public class NacosWelcomeController {
 
-    @GetMapping(value = "/", name = "Common首页")
+    @ApiOperation("Nacos首页")
+    @GetMapping(value = "/", name = "Nacos首页")
     public String homePage() {
         return CommonConstant.FORWARD_KEY + CommonConstant.COLON_SEPARATOR + CommonConstant.HOME_PAGE;
     }
