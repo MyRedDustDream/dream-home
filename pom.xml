@@ -30,7 +30,7 @@
         <redisson.version>3.8.2</redisson.version>
         <com.google.guava.verson>28.1-jre</com.google.guava.verson>
         <org.apache.poi.version>4.1.0</org.apache.poi.version>
-        <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
+        <ch.qos.logback.version>1.3.12</ch.qos.logback.version>
         <httpclient.version>4.5.3</httpclient.version>
         <commons-pool2.version>2.8.0</commons-pool2.version>
         <jedis.version>2.9.1</jedis.version>
